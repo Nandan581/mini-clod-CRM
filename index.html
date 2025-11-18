@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+
+<div class="cards">
+  <div class="card">
+    <h2>Total Customers</h2>
+    <p class="big-number">{{ total_customers }}</p>
+  </div>
+
+  <div class="card">
+    <h2>Total Leads</h2>
+    <p class="big-number">{{ total_leads }}</p>
+  </div>
+</div>
+
+<h2>Leads by Status</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for status, count in lead_stats.items() %}
+    <tr>
+      <td>{{ status }}</td>
+      <td>{{ count }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
