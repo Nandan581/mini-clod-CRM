@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Cloud CRM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Mini Cloud CRM</div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('customers') }}">Customers</a></li>
+      <li><a href="{{ url_for('leads') }}">Leads</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>Mini Cloud CRM · Flask + SQLite</p>
+  </footer>
+</body>
+</html>
